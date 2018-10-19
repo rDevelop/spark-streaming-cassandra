@@ -21,6 +21,8 @@ object CassandraLoader {
     conf.set("spark.cassandra.connection.host", "127.0.0.1")
     conf.setMaster("local[*]")
     conf.setAppName("CassandraExample")
+    conf.set("spark.cassandra.auth.username", "cheese")
+    conf.set("spark.cassandra.auth.password", "pizza")
 
     // Create the context with a 10 second batch size
     val ssc = new StreamingContext(conf, Seconds(10))
